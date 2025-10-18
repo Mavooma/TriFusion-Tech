@@ -1,3 +1,4 @@
+/* ================= GLOBAL STYLES ================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body {
   overflow-x: hidden;
 }
 
+/* ================= HEADER ================= */
 header.sticky {
   position: sticky;
   top: 0;
@@ -81,6 +83,25 @@ header.sticky {
   border-radius: 3px;
 }
 
+/* Show nav when 'show' class is added */
+@media (max-width: 768px) {
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff6f00;
+    position: absolute;
+    top: 60px; /* adjust based on header height */
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.show a {
+    margin: 10px 0;
+  }
+}
+
 /* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
@@ -92,7 +113,7 @@ header.sticky {
   }
 }
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 .hero-section {
   display: flex;
   align-items: center;
@@ -113,7 +134,7 @@ header.sticky {
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 20px;
-  color: #ff8f00; /* slight pop of your accent color */
+  color: #ff8f00;
 }
 
 .hero-content p {
@@ -123,7 +144,7 @@ header.sticky {
 }
 
 .hero-content span {
-  color: #6a1b9a; /* subtle brand accent */
+  color: #6a1b9a;
   font-weight: 600;
 }
 
@@ -161,7 +182,6 @@ header.sticky {
   transform: scale(1.05);
 }
 
-/* Hero Image */
 .hero-image {
   flex: 1 1 400px;
   text-align: center;
@@ -173,11 +193,12 @@ header.sticky {
   border-radius: 10px;
 }
 
-/* Responsive Design */
+/* Responsive Hero */
 @media (max-width: 900px) {
   .hero-section {
     flex-direction: column;
     text-align: center;
+    padding-bottom: 8px;
   }
 
   .hero-content {
@@ -189,6 +210,7 @@ header.sticky {
   }
 }
 
+/* ================= SERVICES ================= */
 .services {
   background-color: #000;
   color: white;
@@ -258,14 +280,14 @@ header.sticky {
   background: linear-gradient(135deg, #6a1b9a, #ff8f00);
 }
 
-/* For tablets (widths below 992px) */
+/* Tablet */
 @media (max-width: 992px) {
   .services-container {
     gap: 30px;
   }
 
   .service-box {
-    width: 45%; /* two columns layout */
+    width: 45%;
   }
 
   .services h2 {
@@ -281,10 +303,10 @@ header.sticky {
   }
 }
 
-/* For mobile phones (widths below 600px) */
+/* Mobile */
 @media (max-width: 600px) {
   .services {
-    padding: 60px 15px;
+    padding: 20px 15px;
   }
 
   .services h2 {
@@ -298,7 +320,7 @@ header.sticky {
   }
 
   .service-box {
-    width: 90%; /* full width on mobile */
+    width: 90%;
     padding: 25px 20px;
   }
 
@@ -316,10 +338,11 @@ header.sticky {
   }
 }
 
+/* ================= ABOUT ================= */
 .about {
   background-color: #000;
   color: #fff;
-  padding: 60px 20px;
+  padding: 30px 20px;
 }
 
 .about-content {
@@ -330,7 +353,7 @@ header.sticky {
   max-width: 1100px;
   margin: 0 auto;
   gap: 40px;
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
 }
 
 .about-text {
@@ -382,10 +405,25 @@ header.sticky {
   box-shadow: 0 0 20px rgba(255, 143, 0, 0.3);
 }
 
+/* About Mobile */
 @media (max-width: 768px) {
+  .about {
+    padding-bottom: 10px;
+  }
+
   .about-content {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
+  }
+
+  .about p {
+    margin-bottom: 15px;
+  }
+
+  .cta {
+    margin-top: 10px;
+    padding-top: 20px;
   }
 
   .about-text {
@@ -397,11 +435,12 @@ header.sticky {
   }
 }
 
+/* ================= CTA ================= */
 .cta {
   background: #000;
   color: #fff;
   text-align: center;
-  padding: 60px 20px;
+  padding: 30px 20px;
 }
 
 .cta-container {
@@ -440,34 +479,35 @@ header.sticky {
   transform: scale(1.05);
 }
 
+/* CTA Mobile */
 @media (max-width: 768px) {
   .cta {
-    padding: 60px 15px; /* Reduce padding for smaller screens */
+    padding: 30px 15px;
   }
 
   .cta h2 {
-    font-size: 2rem; /* Slightly smaller heading */
-    padding: 8px 15px; /* Less padding around heading */
+    font-size: 2rem;
+    padding: 8px 15px;
   }
 
   .cta p {
-    font-size: 1rem; /* Smaller paragraph text */
+    font-size: 1rem;
     margin-bottom: 30px;
   }
 
   .cta-btn {
-    padding: 12px 30px; /* Smaller button for mobile */
+    padding: 12px 30px;
     font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .cta h2 {
-    font-size: 1.7rem; /* Adjust heading for very small screens */
+    font-size: 1.7rem;
   }
 
   .cta p {
-    font-size: 0.95rem; /* Adjust paragraph text */
+    font-size: 0.95rem;
   }
 
   .cta-btn {
@@ -476,154 +516,227 @@ header.sticky {
   }
 }
 
-/* FOOTER STYLING */
+/* ================= FOOTER ================= */
 .footer {
-    background-color: #000; /* Dark, professional background */
-    color: #f5f5f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 40px 20px 20px 20px;
+  background-color: #000;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px 20px 20px;
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
 }
 
 /* Logo & Description */
 .logo-container {
-    flex: 1 1 200px;
+  flex: 1 1 200px;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff8f00;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff8f00;
+  margin-bottom: 10px;
 }
 
 .description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #cfcfcf;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #cfcfcf;
 }
 
 /* Social Icons */
 .social-icons {
-    display: flex;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
 }
 
 .social-icons li a {
-    font-size: 1.2rem;
-    color: #f5f5f5;
-    transition: color 0.3s ease;
+  font-size: 1.2rem;
+  color: #f5f5f5;
+  transition: color 0.3s ease;
 }
 
 .social-icons li a:hover {
-    color: #ff8f00;
+  color: #ff8f00;
 }
 
 /* Footer Columns */
 .footer-columns {
-    display: flex;
-    gap: 60px;
-    flex: 2 1 400px;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  gap: 60px;
+  flex: 2 1 400px;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-columns h2 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #ff8f00;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #ff8f00;
 }
 
 .footer-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-nav li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-nav li a {
-    color: #f5f5f5;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-nav li a:hover {
-    color: #ff8f00;
+  color: #ff8f00;
 }
 
 /* Footer Logo Image */
 .footer-logo-img img {
-    max-width: 100px;
-    display: block;
-    margin-left: auto;
+  max-width: 100px;
+  display: block;
+  margin-left: auto;
 }
 
 /* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid #2c2c2c;
-    margin-top: 40px;
-    padding-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: #cfcfcf;
+  border-top: 1px solid #2c2c2c;
+  margin-top: 30px;
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #cfcfcf;
 }
 
 .footer-bottom-nav {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-bottom-nav li a {
-    color: #cfcfcf;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #cfcfcf;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-bottom-nav li a:hover {
-    color: #ff8f00;
+  color: #ff8f00;
 }
 
-/* RESPONSIVE */
+/* ================= FOOTER MOBILE ================= */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 30px;
-    }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
 
-    .footer-columns {
-        flex-direction: column;
-        gap: 20px;
-    }
+  .logo-container,
+  .footer-columns,
+  .footer-bottom {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
 
-    .footer-logo-img {
-        text-align: center;
-        margin-top: 20px;
-    }
+  .footer-columns {
+    gap: 15px;
+    margin-top: -70px;
+  }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
+  .footer-nav li {
+    margin-bottom: 6px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+    padding-top: 10px;
+  }
+
+  .footer-bottom-nav {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-logo-img img {
+    margin: 5px auto 0;
+    margin-top: -55px;
+  }
 }
+
+/* ================= UNIFIED SECTION SPACING ================= */
+
+/* HERO */
+.hero-section {
+  padding: 50px 8%; /* slightly smaller top/bottom */
+}
+
+/* SERVICES */
+.services {
+  padding: 40px 20px; /* tighter spacing */
+}
+.services h2 {
+  margin-bottom: 30px; /* reduces gap between heading and boxes */
+}
+
+/* ABOUT */
+.about {
+  padding: 30px 20px; /* reduce top/bottom padding */
+}
+.about-content {
+  gap: 25px; /* closer text and image */
+}
+.about h2 {
+  margin-bottom: 15px; /* less space below heading */
+}
+.about p {
+  margin-bottom: 20px; /* tighter spacing to button */
+}
+
+/* CTA */
+.cta {
+  padding: 25px 20px; /* reduce top/bottom padding */
+}
+.cta h2 {
+  margin-bottom: 15px;
+}
+.cta p {
+  margin-bottom: 20px;
+}
+
+/* NAVBAR */
+header.sticky .container {
+  padding: 10px 20px; /* slightly reduce top/bottom for slimmer header */
+}
+
