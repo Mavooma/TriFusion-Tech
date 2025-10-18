@@ -81,6 +81,25 @@ header.sticky {
   border-radius: 3px;
 }
 
+/* Show nav when 'show' class is added */
+@media (max-width: 768px) {
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff6f00;
+    position: absolute;
+    top: 60px; /* adjust based on header height */
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.show a {
+    margin: 10px 0;
+  }
+}
+
 /* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
@@ -152,6 +171,53 @@ header.sticky {
 .hero-image img {
   max-width: 450px;
   border-radius: 10px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+  .hero {
+    padding: 30px 20px; /* less horizontal padding */
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem; /* slightly smaller on tablets */
+  }
+
+  .hero-image img {
+    max-width: 250px; /* scale down for medium screens */
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.6rem; /* smaller heading for mobile */
+  }
+
+  .hero-text p {
+    font-size: 0.95rem; /* slightly smaller paragraph */
+  }
+
+  .hero-image img {
+    max-width: 100%; /* full width on mobile */
+    height: auto;
+  }
+
+  .social-icons i {
+    margin-right: 10px;
+    font-size: 1.1rem; /* slightly smaller icons */
+  }
 }
 
 /* Our Story */
